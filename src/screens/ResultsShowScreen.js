@@ -1,6 +1,6 @@
         import React,{useState,useEffect} from 'react';
         import {View,Text,StyleSheet,FlatList,Image} from 'react-native';
-        import MapView from 'react-native-maps';
+        // import MapView from 'react-native-maps';
 
         import  {AntDesign} from '@expo/vector-icons';
         import  yelp from '../api/yelp';
@@ -28,7 +28,7 @@
             return(
                     <View>
                         <Text style={styles.title}>{restaurant.name}</Text>
-                        <Text style={styles.info}>Rating:{restaurant.rating} <AntDesign name="star"/></Text>
+                        <Text style={styles.info}>Rating:{restaurant.rating} <AntDesign name="star" style={styles.icon}/></Text>
                         <View style={styles.container}>
                         <FlatList
                             horizontal
@@ -67,13 +67,13 @@
                                 <Text>{restaurant.location.zip_code}</Text>
                             </View>
                         </View>
-                        <MapView
-                            initialRegion={{
-                                latitude: 37.78825,
-                                longitude: -122.4324,
+                        {/*<MapView*/}
+                            {/*initialRegion={{*/}
+                                {/*latitude: 37.78825,*/}
+                                {/*longitude: -122.4324,*/}
 
-                            }}
-                        />
+                            {/*}}*/}
+                        {/*/>*/}
                     </View>
                 )
 
@@ -87,9 +87,14 @@
                 height: 400,
                 marginTop: 80
             },
+            icon: {
+              fontSize:22,
+                marginLeft:10
+            },
                 title:{
                     textAlign:'center',
                     fontSize:25,
+                    marginTop:10,
                     fontWeight:'bold'
                 },
             textContainer:{
